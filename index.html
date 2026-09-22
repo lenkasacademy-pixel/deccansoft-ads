@@ -18,7 +18,7 @@
 <script>
 const DATA = {
   account: { name: "Deccansoft Home", id: "1864644430272738", currency: "INR", pixel: "666052152973589" },
-  updated: "22 Sep 2026, 10:30 PM IST",
+  updated: "22 Sep 2026, 10:50 PM IST",
   // Last day in the data. It is a part-day until tomorrow's refresh.
   // Reporting starts here; nothing before this day is shown.
   startDay: "2026-09-22",
@@ -28,36 +28,37 @@ const DATA = {
   // Totals are lifetime for the ad. img: thumbnail URL or "".
   ads: [
     // --- FDE Webinar 3 Oct | Quiz page vs Webinar page (campaign 120252971054530236) ---
-    { id: "120252971167360236", name: "Q1_w11_eventcard",  group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w11-event-card.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971168770236", name: "Q2_w7_jobposting",  group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w7-job-posting.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971170140236", name: "Q3_w8_bothsides",   group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w8-both-sides.jpg",   spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971171160236", name: "Q4_w9_twopostings", group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w9-two-postings.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971172000236", name: "Q5_w1_framework",   group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w1-framework.jpg",    spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971157710236", name: "W1_w11_eventcard",  group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w11-event-card.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971159290236", name: "W2_w7_jobposting",  group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w7-job-posting.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971160740236", name: "W3_w8_bothsides",   group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w8-both-sides.jpg",   spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971161800236", name: "W4_w9_twopostings", group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w9-two-postings.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971165400236", name: "W5_w1_framework",   group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w1-framework.jpg",    spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971167360236", name: "Q1_w11_eventcard",  group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w11-event-card.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971168770236", name: "Q2_w7_jobposting",  group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w7-job-posting.jpg",  spend: 0, impr: 1, reach: 1, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971170140236", name: "Q3_w8_bothsides",   group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w8-both-sides.jpg",   spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971171160236", name: "Q4_w9_twopostings", group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w9-two-postings.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971172000236", name: "Q5_w1_framework",   group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w1-framework.jpg",    spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971157710236", name: "W1_w11_eventcard",  group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w11-event-card.jpg",  spend: 662.03, impr: 7020, reach: 5935, clicks: 50, lpv: 33, leads: 2, regs: 2 },
+    { id: "120252971159290236", name: "W2_w7_jobposting",  group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w7-job-posting.jpg",  spend: 69.26, impr: 964, reach: 950, clicks: 10, lpv: 6, leads: 0, regs: 0 },
+    { id: "120252971160740236", name: "W3_w8_bothsides",   group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w8-both-sides.jpg",   spend: 71.81, impr: 1923, reach: 1905, clicks: 11, lpv: 6, leads: 0, regs: 0 },
+    { id: "120252971161800236", name: "W4_w9_twopostings", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w9-two-postings.jpg", spend: 132.23, impr: 3083, reach: 2991, clicks: 21, lpv: 16, leads: 3, regs: 3 },
+    { id: "120252971165400236", name: "W5_w1_framework",   group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w1-framework.jpg",    spend: 146.92, impr: 2241, reach: 2183, clicks: 14, lpv: 9, leads: 0, regs: 0 },
   ],
 
   // Ad spend per day (IST), all ads summed: [date, spend, impressions, linkClicks, leads, registrations]
   daily: [
+    ["2026-09-22", 1082.25, 15232, 106, 5, 5],
   ],
 
   // Website events from the Meta pixel, BROWSER ONLY (the server copy of each event is not counted,
   // so each real action counts once). Per IST day. Includes all traffic, not only ads.
   pixel: {
-    "2026-09-22": { PageView: 109, QuizCtaClick: 2, QuizStart: 20, QuizAnswer: 64, QuizComplete: 4, QuizSubmitFailed: 1, RegisterClick: 16, RegistrationAbandon: 1, CompleteRegistration: 2, Lead: 7, InitiateCheckout: 15, Purchase: 5 },
+    "2026-09-22": { PageView: 117, QuizCtaClick: 2, QuizStart: 24, QuizAnswer: 88, QuizComplete: 7, QuizSubmitFailed: 1, RegisterClick: 20, RegistrationAbandon: 1, CompleteRegistration: 5, Lead: 10, InitiateCheckout: 15, Purchase: 5 },
   },
 
   // Free-text notes shown at the top. level: "critical" | "serious" | "warning" | "good"
   notes: [
-    { level: "warning", title: "New campaign is built but paused",
-      text: "“FDE Webinar 3 Oct | Quiz page vs Webinar page”: 2 ad sets × 5 ads, ₹1,500/day each, ends 3 Oct 6 PM IST. Its rows below stay at zero until it is switched on." },
+    { level: "critical", title: "The Quiz page ad set is not spending",
+      text: "Both ad sets went live at 4:03 PM IST. The Webinar page ad set has spent ₹1,082; the Quiz page ad set has spent ₹0 on 3 impressions. Nothing is blocked: Meta is simply choosing not to spend on it, which usually means it expects too few Leads from it. The AI-360 quiz page had only 2 start-quiz clicks today, so the quiz numbers below are almost all from the webinar page's own quiz." },
+    { level: "good", title: "5 webinar registrations on day 1, ₹216 each",
+      text: "All from the Webinar page ad set. W4 Two Postings: 3 registrations for ₹132. W1 Event Card: 2 for ₹662. Landing-page views are 70 of 106 link clicks (66%), so this time the clicks are reaching the page." },
     { level: "warning", title: "Most ‘Lead’ and all ‘Purchase’ events are the KickStarter checkout",
-      text: "Purchase/InitiateCheckout/Lead arrive in bursts of 5/15 from the KickStarter checkout on the same pixel. That is why the ad sets optimise on CompleteRegistration (webinar) and the quiz reports QuizLead separately." },
-    { level: "good", title: "Quiz tracking is live",
-      text: "The AI-360 quiz (events.bestitcourses.com/forwarddeployedengineer) sends QuizStart, QuizAnswer, QuizComplete and Lead. Today (22 Sep, part day): 20 quiz starts, 4 completed." },
+      text: "Purchase/InitiateCheckout/Lead arrive in bursts of 5/15 from the KickStarter checkout on the same pixel. Count webinar sign-ups by Registrations, not Lead." },
   ],
 };
 </script>
@@ -300,7 +301,7 @@ const DATA = {
     const W = svg.clientWidth || 800, H = 220, L = 52, R = 8, T = 10, B = 26;
     const max = Math.max(1, ...values);
     const nice = (() => { const p = Math.pow(10, Math.floor(Math.log10(max))); const m = max / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10) * p; })();
-    const x = i => L + i * (W - L - R) / days.length, bw = Math.max(1, (W - L - R) / days.length - 2);
+    const slot = (W - L - R) / days.length, bw = Math.min(48, Math.max(1, slot - 2)), x = i => L + i * slot + (slot - bw) / 2;
     const y = v => T + (H - T - B) * (1 - v / nice);
     let s = "";
     for (let k = 0; k <= 4; k++) { const v = nice * k / 4; s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)" stroke-width="1"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}</text>`; }
