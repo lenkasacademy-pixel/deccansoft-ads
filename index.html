@@ -20,9 +20,11 @@ const DATA = {
   account: { name: "Deccansoft Home", id: "1864644430272738", currency: "INR", pixel: "666052152973589" },
   updated: "22 Sep 2026, 10:30 PM IST",
   // Last day in the data. It is a part-day until tomorrow's refresh.
+  // Reporting starts here; nothing before this day is shown.
+  startDay: "2026-09-22",
   throughDay: "2026-09-22",
 
-  // One row per ad. group: "quiz" | "webinar" | "old" (anything before the 3 Oct campaign).
+  // One row per ad. group: "quiz" | "webinar". Reporting starts 22 Sep 2026; earlier data is deliberately left out.
   // Totals are lifetime for the ad. img: thumbnail URL or "".
   ads: [
     // --- FDE Webinar 3 Oct | Quiz page vs Webinar page (campaign 120252971054530236) ---
@@ -36,56 +38,26 @@ const DATA = {
     { id: "120252971160740236", name: "W3_w8_bothsides",   group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w8-both-sides.jpg",   spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
     { id: "120252971161800236", name: "W4_w9_twopostings", group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w9-two-postings.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
     { id: "120252971165400236", name: "W5_w1_framework",   group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w1-framework.jpg",    spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    // --- FDE Webinar 26 Sep | Quiz vs Direct test (campaign 120252865058480236), ad set "A | With Quiz ... – Copy" ---
-    { id: "120252866343970236", name: "A4_Developer to FDE",   group: "old", adset: "26 Sep test · A With Quiz (copy)", status: "CAMPAIGN_PAUSED", img: "", spend: 361.77, impr: 777,  reach: 600, clicks: 110, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252866343980236", name: "sampleresult",          group: "old", adset: "26 Sep test · A With Quiz (copy)", status: "CAMPAIGN_PAUSED", img: "", spend: 209.09, impr: 639,  reach: 538, clicks: 80,  lpv: 0, leads: 0, regs: 0 },
-    { id: "120252866343950236", name: "Small ticket creative", group: "old", adset: "26 Sep test · A With Quiz (copy)", status: "CAMPAIGN_PAUSED", img: "", spend: 152.53, impr: 1310, reach: 964, clicks: 194, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252866343960236", name: "Team chat creative",    group: "old", adset: "26 Sep test · A With Quiz (copy)", status: "CAMPAIGN_PAUSED", img: "", spend: 14.46,  impr: 1152, reach: 928, clicks: 142, lpv: 0, leads: 0, regs: 0 },
   ],
 
   // Ad spend per day (IST), all ads summed: [date, spend, impressions, linkClicks, leads, registrations]
   daily: [
-    ["2026-09-17", 737.85, 3878, 526, 0, 0],
   ],
 
   // Website events from the Meta pixel, BROWSER ONLY (the server copy of each event is not counted,
   // so each real action counts once). Per IST day. Includes all traffic, not only ads.
   pixel: {
-    "2026-08-29": { PageView: 7 },
-    "2026-08-30": { PageView: 4 },
-    "2026-09-01": { PageView: 117 },
-    "2026-09-02": { PageView: 45 },
-    "2026-09-03": { PageView: 12 },
-    "2026-09-04": { PageView: 28 },
-    "2026-09-05": { PageView: 161, InitiateCheckout: 1 },
-    "2026-09-06": { PageView: 16 },
-    "2026-09-07": { PageView: 5 },
-    "2026-09-08": { PageView: 18 },
-    "2026-09-09": { PageView: 10 },
-    "2026-09-10": { PageView: 10 },
-    "2026-09-11": { PageView: 19, InitiateCheckout: 1 },
-    "2026-09-12": { PageView: 96, QuizStart: 4, QuizAnswer: 7, RegisterClick: 4, RegistrationAbandon: 1 },
-    "2026-09-13": { PageView: 25, QuizStart: 2, QuizAnswer: 13, QuizComplete: 1, RegisterClick: 2, CompleteRegistration: 1, Lead: 11, InitiateCheckout: 30, Purchase: 10 },
-    "2026-09-14": { PageView: 27, Lead: 10, InitiateCheckout: 30, Purchase: 10 },
-    "2026-09-15": { PageView: 1 },
-    "2026-09-17": { PageView: 15, QuizStart: 2, QuizAnswer: 7, QuizComplete: 1, RegisterClick: 2, RegistrationAbandon: 1, RegistrationSyncFailed: 2, CompleteRegistration: 1, Lead: 6, InitiateCheckout: 15, Purchase: 5 },
-    "2026-09-18": { PageView: 6 },
-    "2026-09-19": { PageView: 16, Lead: 5, InitiateCheckout: 15, Purchase: 5 },
-    "2026-09-20": { PageView: 24, Lead: 5, InitiateCheckout: 35, Purchase: 10 },
-    "2026-09-21": { PageView: 12, QuizStart: 2, RegisterClick: 2, RegistrationAbandon: 1 },
     "2026-09-22": { PageView: 109, QuizCtaClick: 2, QuizStart: 20, QuizAnswer: 64, QuizComplete: 4, QuizSubmitFailed: 1, RegisterClick: 16, RegistrationAbandon: 1, CompleteRegistration: 2, Lead: 7, InitiateCheckout: 15, Purchase: 5 },
   },
 
   // Free-text notes shown at the top. level: "critical" | "serious" | "warning" | "good"
   notes: [
-    { level: "critical", title: "The 17 Sep clicks never reached the page",
-      text: "The 4 old ads logged 526 link clicks but zero landing-page views, and the pixel saw only 15 page views that day. “Team chat creative” got 142 clicks for ₹14. This is the pattern of low-quality placements (usually Audience Network). Watch landing-page views vs clicks on the new campaign from day 1." },
     { level: "warning", title: "New campaign is built but paused",
       text: "“FDE Webinar 3 Oct | Quiz page vs Webinar page”: 2 ad sets × 5 ads, ₹1,500/day each, ends 3 Oct 6 PM IST. Its rows below stay at zero until it is switched on." },
     { level: "warning", title: "Most ‘Lead’ and all ‘Purchase’ events are the KickStarter checkout",
       text: "Purchase/InitiateCheckout/Lead arrive in bursts of 5/15 from the KickStarter checkout on the same pixel. That is why the ad sets optimise on CompleteRegistration (webinar) and the quiz reports QuizLead separately." },
     { level: "good", title: "Quiz tracking is live",
-      text: "The AI-360 quiz (events.bestitcourses.com/forwarddeployedengineer) sends QuizStart, QuizAnswer, QuizComplete and Lead. 22 Sep: 20 quiz starts, 4 completed." },
+      text: "The AI-360 quiz (events.bestitcourses.com/forwarddeployedengineer) sends QuizStart, QuizAnswer, QuizComplete and Lead. Today (22 Sep, part day): 20 quiz starts, 4 completed." },
   ],
 };
 </script>
@@ -237,7 +209,7 @@ const DATA = {
 
   // Days from the first day with any data to throughDay.
   const allDays = [];
-  const first = [...Object.keys(DATA.pixel), ...DATA.daily.map(r => r[0])].sort()[0];
+  const first = DATA.startDay;
   for (let d = new Date(first + "T00:00:00Z"); d.toISOString().slice(0, 10) <= DATA.throughDay; d.setUTCDate(d.getUTCDate() + 1)) allDays.push(d.toISOString().slice(0, 10));
   const fmtDay = d => new Date(d + "T00:00:00Z").toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "UTC" });
 
@@ -372,6 +344,13 @@ const DATA = {
   function renderSpend() {
     const days = inRange(), by = Object.fromEntries(DATA.daily.map(r => [r[0], r]));
     $("spendLab").textContent = "all ads · hover a bar for detail";
+    const svg = $("spendChart");
+    if (!days.some(d => by[d] && by[d][1] > 0)) {
+      svg.setAttribute("viewBox", "0 0 800 80"); svg.style.height = "80px";
+      svg.innerHTML = `<text x="400" y="45" text-anchor="middle" style="font-size:13px">No ad spend yet in this range. The campaign is paused.</text>`;
+      return;
+    }
+    svg.style.height = "";
     barChart($("spendChart"), days, days.map(d => by[d] ? by[d][1] : 0), v => v >= 1000 ? "₹" + (v / 1000) + "k" : "₹" + Math.round(v), i => {
       const r = by[days[i]]; return `<b>${fmtDay(days[i])}</b><br>` + (r ? `Spent ${inr(r[1], 2)}<br>${num(r[2])} impressions<br>${num(r[3])} link clicks<br>${r[4]} leads · ${r[5]} registrations` : "No spend");
     });

@@ -2,6 +2,8 @@
 
 Live: https://lenkasacademy-pixel.github.io/deccansoft-ads/
 
+Reporting starts **22 Sep 2026**; earlier data is deliberately left out.
+
 One self-contained page (`index.html`) for the Deccansoft Home ad account
 (`1864644430272738`) and its pixel (`666052152973589`). Every figure lives in the
 `DATA` block at the top of `index.html`; the rest of the page is computed from it.
@@ -16,7 +18,7 @@ Easiest: ask Claude **"refresh the Deccansoft dashboard"**. By hand:
    `spend` (amount spent, ex-GST), `impr` (impressions), `reach`,
    `clicks` (link clicks), `lpv` (website landing page views),
    `leads` (leads), `regs` (registrations completed), `status`.
-   A new ad needs a new row; `group` is `quiz`, `webinar` or `old`.
+   A new ad needs a new row; `group` is `quiz` or `webinar`.
 3. **`daily`**: one row per day for all ads together:
    `["YYYY-MM-DD", spend, impressions, linkClicks, leads, registrations]`.
    **Re-enter the last 2–3 days each time**, not only today: Meta keeps adjusting
