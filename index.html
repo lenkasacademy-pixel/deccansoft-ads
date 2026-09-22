@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deccansoft Ads Dashboard</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  ============================================================================
+  DAILY UPDATE: edit ONLY the DATA block below (see README.md for each field).
+  Everything else on the page is computed from it.
+  ============================================================================
+-->
+<script>
+const DATA = {
+  account: { name: "Deccansoft Home", id: "1864644430272738", currency: "INR", pixel: "666052152973589" },
+  updated: "22 Sep 2026, 10:30 PM IST",
+  // Last day in the data. It is a part-day until tomorrow's refresh.
+  throughDay: "2026-09-22",
+
+  // One row per ad. group: "quiz" | "webinar" | "old" (anything before the 3 Oct campaign).
+  // Totals are lifetime for the ad. img: thumbnail URL or "".
+  ads: [
+    // --- FDE Webinar 3 Oct | Quiz page vs Webinar page (campaign 120252971054530236) ---
+    { id: "120252971167360236", name: "Q1_w11_eventcard",  group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w11-event-card.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971168770236", name: "Q2_w7_jobposting",  group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w7-job-posting.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971170140236", name: "Q3_w8_bothsides",   group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w8-both-sides.jpg",   spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971171160236", name: "Q4_w9_twopostings", group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w9-two-postings.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971172000236", name: "Q5_w1_framework",   group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w1-framework.jpg",    spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971157710236", name: "W1_w11_eventcard",  group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w11-event-card.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971159290236", name: "W2_w7_jobposting",  group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w7-job-posting.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971160740236", name: "W3_w8_bothsides",   group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w8-both-sides.jpg",   spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971161800236", name: "W4_w9_twopostings", group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w9-two-postings.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252971165400236", name: "W5_w1_framework",   group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w1-framework.jpg",    spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    // --- FDE Webinar 26 Sep | Quiz vs Direct test (campaign 120252865058480236), ad set "A | With Quiz ... – Copy" ---
+    { id: "120252866343970236", name: "A4_Developer to FDE",   group: "old", adset: "26 Sep test · A With Quiz (copy)", status: "CAMPAIGN_PAUSED", img: "", spend: 361.77, impr: 777,  reach: 600, clicks: 110, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252866343980236", name: "sampleresult",          group: "old", adset: "26 Sep test · A With Quiz (copy)", status: "CAMPAIGN_PAUSED", img: "", spend: 209.09, impr: 639,  reach: 538, clicks: 80,  lpv: 0, leads: 0, regs: 0 },
+    { id: "120252866343950236", name: "Small ticket creative", group: "old", adset: "26 Sep test · A With Quiz (copy)", status: "CAMPAIGN_PAUSED", img: "", spend: 152.53, impr: 1310, reach: 964, clicks: 194, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252866343960236", name: "Team chat creative",    group: "old", adset: "26 Sep test · A With Quiz (copy)", status: "CAMPAIGN_PAUSED", img: "", spend: 14.46,  impr: 1152, reach: 928, clicks: 142, lpv: 0, leads: 0, regs: 0 },
+  ],
+
+  // Ad spend per day (IST), all ads summed: [date, spend, impressions, linkClicks, leads, registrations]
+  daily: [
+    ["2026-09-17", 737.85, 3878, 526, 0, 0],
+  ],
+
+  // Website events from the Meta pixel, BROWSER ONLY (the server copy of each event is not counted,
+  // so each real action counts once). Per IST day. Includes all traffic, not only ads.
+  pixel: {
+    "2026-08-29": { PageView: 7 },
+    "2026-08-30": { PageView: 4 },
+    "2026-09-01": { PageView: 117 },
+    "2026-09-02": { PageView: 45 },
+    "2026-09-03": { PageView: 12 },
+    "2026-09-04": { PageView: 28 },
+    "2026-09-05": { PageView: 161, InitiateCheckout: 1 },
+    "2026-09-06": { PageView: 16 },
+    "2026-09-07": { PageView: 5 },
+    "2026-09-08": { PageView: 18 },
+    "2026-09-09": { PageView: 10 },
+    "2026-09-10": { PageView: 10 },
+    "2026-09-11": { PageView: 19, InitiateCheckout: 1 },
+    "2026-09-12": { PageView: 96, QuizStart: 4, QuizAnswer: 7, RegisterClick: 4, RegistrationAbandon: 1 },
+    "2026-09-13": { PageView: 25, QuizStart: 2, QuizAnswer: 13, QuizComplete: 1, RegisterClick: 2, CompleteRegistration: 1, Lead: 11, InitiateCheckout: 30, Purchase: 10 },
+    "2026-09-14": { PageView: 27, Lead: 10, InitiateCheckout: 30, Purchase: 10 },
+    "2026-09-15": { PageView: 1 },
+    "2026-09-17": { PageView: 15, QuizStart: 2, QuizAnswer: 7, QuizComplete: 1, RegisterClick: 2, RegistrationAbandon: 1, RegistrationSyncFailed: 2, CompleteRegistration: 1, Lead: 6, InitiateCheckout: 15, Purchase: 5 },
+    "2026-09-18": { PageView: 6 },
+    "2026-09-19": { PageView: 16, Lead: 5, InitiateCheckout: 15, Purchase: 5 },
+    "2026-09-20": { PageView: 24, Lead: 5, InitiateCheckout: 35, Purchase: 10 },
+    "2026-09-21": { PageView: 12, QuizStart: 2, RegisterClick: 2, RegistrationAbandon: 1 },
+    "2026-09-22": { PageView: 109, QuizCtaClick: 2, QuizStart: 20, QuizAnswer: 64, QuizComplete: 4, QuizSubmitFailed: 1, RegisterClick: 16, RegistrationAbandon: 1, CompleteRegistration: 2, Lead: 7, InitiateCheckout: 15, Purchase: 5 },
+  },
+
+  // Free-text notes shown at the top. level: "critical" | "serious" | "warning" | "good"
+  notes: [
+    { level: "critical", title: "The 17 Sep clicks never reached the page",
+      text: "The 4 old ads logged 526 link clicks but zero landing-page views, and the pixel saw only 15 page views that day. “Team chat creative” got 142 clicks for ₹14. This is the pattern of low-quality placements (usually Audience Network). Watch landing-page views vs clicks on the new campaign from day 1." },
+    { level: "warning", title: "New campaign is built but paused",
+      text: "“FDE Webinar 3 Oct | Quiz page vs Webinar page”: 2 ad sets × 5 ads, ₹1,500/day each, ends 3 Oct 6 PM IST. Its rows below stay at zero until it is switched on." },
+    { level: "warning", title: "Most ‘Lead’ and all ‘Purchase’ events are the KickStarter checkout",
+      text: "Purchase/InitiateCheckout/Lead arrive in bursts of 5/15 from the KickStarter checkout on the same pixel. That is why the ad sets optimise on CompleteRegistration (webinar) and the quiz reports QuizLead separately." },
+    { level: "good", title: "Quiz tracking is live",
+      text: "The AI-360 quiz (events.bestitcourses.com/forwarddeployedengineer) sends QuizStart, QuizAnswer, QuizComplete and Lead. 22 Sep: 20 quiz starts, 4 completed." },
+  ],
+};
+</script>
+
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f6f5f2; --surface: #fcfcfb; --surface-2: #f0efec; --border: #e4e2dc;
+    --text: #0b0b0b; --text-2: #52514e; --text-3: #7a7973;
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+    --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
+    --grid: #e4e2dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #121211; --surface: #1a1a19; --surface-2: #232321; --border: #33332f;
+      --text: #ffffff; --text-2: #c3c2b7; --text-3: #8f8e86;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --grid: #33332f;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #121211; --surface: #1a1a19; --surface-2: #232321; --border: #33332f;
+    --text: #ffffff; --text-2: #c3c2b7; --text-3: #8f8e86;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --grid: #33332f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 16px 64px; }
+  header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; margin-bottom: 20px; }
+  h1 { font-size: 24px; letter-spacing: -0.02em; margin: 0; }
+  .sub { color: var(--text-2); margin: 2px 0 0; }
+  .meta { color: var(--text-3); font-size: 12px; text-align: right; }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 18px; }
+  .filters button { font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); cursor: pointer; }
+  .filters button[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+  h2 { font-size: 15px; margin: 32px 0 10px; letter-spacing: -0.01em; }
+  h2 small { font-weight: 400; color: var(--text-3); margin-left: 6px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .tile .k { color: var(--text-2); font-size: 12px; }
+  .tile .v { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .tile .h { color: var(--text-3); font-size: 12px; }
+  .notes { display: grid; gap: 8px; }
+  .note { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
+  .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid; }
+  .badge i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .note b { display: block; }
+  .note > div { min-width: 0; }
+  .note p { margin: 2px 0 0; color: var(--text-2); overflow-wrap: anywhere; }
+  .grp { min-width: 0; }
+  .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 10px; }
+  .grp h3 { margin: 0 0 2px; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+  .sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .grp .url { color: var(--text-3); font-size: 12px; word-break: break-all; }
+  .kv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 12px; margin-top: 12px; }
+  .kv div span { display: block; color: var(--text-3); font-size: 11px; }
+  .kv div strong { font-variant-numeric: tabular-nums; }
+  .scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th { color: var(--text-2); font-size: 12px; font-weight: 600; cursor: pointer; user-select: none; position: sticky; top: 0; background: var(--surface); }
+  th:first-child, td:first-child, th.l, td.l { text-align: left; }
+  tbody tr:hover { background: var(--surface-2); }
+  td.ad { display: flex; align-items: center; gap: 10px; }
+  td.ad img, td.ad .ph { width: 36px; height: 46px; object-fit: cover; border-radius: 4px; background: var(--surface-2); flex: none; }
+  td.ad div small { display: block; color: var(--text-3); font-size: 11px; }
+  .muted { color: var(--text-3); }
+  .status { font-size: 11px; color: var(--text-2); }
+  tfoot td { font-weight: 700; border-bottom: 0; }
+  .chart { width: 100%; height: 220px; display: block; }
+  .chart text { fill: var(--text-3); font-size: 11px; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-2); margin-bottom: 6px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .tip { position: fixed; pointer-events: none; background: var(--text); color: var(--bg); padding: 6px 9px; border-radius: 6px; font-size: 12px; line-height: 1.4; z-index: 10; }
+  .funnel { display: grid; gap: 6px; }
+  .frow { display: grid; grid-template-columns: 170px 1fr 70px; gap: 10px; align-items: center; }
+  .frow .lab small { display: block; color: var(--text-3); font-size: 11px; }
+  .bar { height: 18px; border-radius: 0 4px 4px 0; background: var(--s1); min-width: 2px; }
+  .frow .n { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+  footer { margin-top: 40px; color: var(--text-3); font-size: 12px; }
+  @media (max-width: 560px) { .frow { grid-template-columns: 110px 1fr 50px; } .kv { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Deccansoft · Meta ads</h1>
+      <p class="sub" id="acct"></p>
+    </div>
+    <div class="meta" id="upd"></div>
+  </header>
+
+  <div class="filters" role="group" aria-label="Date range">
+    <button data-range="7">Last 7 days</button>
+    <button data-range="14">Last 14 days</button>
+    <button data-range="all" aria-pressed="true">All data</button>
+  </div>
+
+  <section class="notes" id="notes" aria-label="Alerts"></section>
+
+  <h2>Ad performance <small id="rangeLab"></small></h2>
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Quiz page vs Webinar page <small>FDE Webinar 3 Oct campaign · lifetime</small></h2>
+  <div class="split" id="groups"></div>
+
+  <h2>Every creative <small>lifetime per ad · click a column to sort</small></h2>
+  <div class="card scroll"><table id="ads"></table></div>
+
+  <h2>Daily ad spend <small id="spendLab"></small></h2>
+  <div class="card">
+    <svg class="chart" id="spendChart" role="img" aria-label="Daily ad spend"></svg>
+  </div>
+
+  <h2>Quiz &amp; registration funnel <small id="funnelLab">website events, browser only, all traffic</small></h2>
+  <div class="card"><div class="funnel" id="funnel"></div></div>
+
+  <h2>Quiz activity per day</h2>
+  <div class="card">
+    <div class="legend" id="quizLegend"></div>
+    <svg class="chart" id="quizChart" role="img" aria-label="Quiz starts, completions and registrations per day"></svg>
+  </div>
+
+  <h2>All website events per day <small>browser only</small></h2>
+  <div class="card scroll"><table id="pix"></table></div>
+
+  <footer id="foot"></footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(() => {
+  const inr = (v, d = 0) => "₹" + Number(v).toLocaleString("en-IN", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const num = v => Number(v).toLocaleString("en-IN");
+  const pct = (a, b) => b ? (a / b * 100).toFixed(1) + "%" : "–";
+  const per = (s, n) => n ? inr(s / n, 0) : "–";
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const $ = id => document.getElementById(id);
+  const tip = $("tip");
+  const showTip = (e, html) => { tip.innerHTML = html; tip.hidden = false; tip.style.left = Math.min(e.clientX + 12, innerWidth - tip.offsetWidth - 8) + "px"; tip.style.top = (e.clientY + 12) + "px"; };
+  const hideTip = () => { tip.hidden = true; };
+
+  const LEVEL = { critical: ["Critical", "var(--critical)", "!"], serious: ["Serious", "var(--serious)", "!"], warning: ["Heads-up", "var(--warning)", "•"], good: ["Good", "var(--good)", "✓"] };
+  const GROUP = { quiz: { label: "Quiz page", color: "var(--s1)", url: "events.bestitcourses.com/forwarddeployedengineer" },
+                  webinar: { label: "Webinar page", color: "var(--s2)", url: "events.bestitcourses.com/forward-deployed-engineer" } };
+
+  // Days from the first day with any data to throughDay.
+  const allDays = [];
+  const first = [...Object.keys(DATA.pixel), ...DATA.daily.map(r => r[0])].sort()[0];
+  for (let d = new Date(first + "T00:00:00Z"); d.toISOString().slice(0, 10) <= DATA.throughDay; d.setUTCDate(d.getUTCDate() + 1)) allDays.push(d.toISOString().slice(0, 10));
+  const fmtDay = d => new Date(d + "T00:00:00Z").toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "UTC" });
+
+  $("acct").textContent = `${DATA.account.name} · ad account ${DATA.account.id} · pixel ${DATA.account.pixel}`;
+  $("upd").innerHTML = `Updated ${esc(DATA.updated)}<br>Data through ${fmtDay(DATA.throughDay)} (part day)`;
+
+  $("notes").innerHTML = DATA.notes.map(n => {
+    const [lab, col, icon] = LEVEL[n.level] || LEVEL.warning;
+    return `<div class="card note"><span class="badge" style="border-color:${col};color:var(--text)"><i style="background:${col}"></i>${icon} ${lab}</span><div><b>${esc(n.title)}</b><p>${esc(n.text)}</p></div></div>`;
+  }).join("");
+
+  let range = "all";
+  const inRange = () => range === "all" ? allDays : allDays.slice(-Number(range));
+
+  function renderTiles() {
+    const days = new Set(inRange());
+    const rows = DATA.daily.filter(r => days.has(r[0]));
+    const t = rows.reduce((a, r) => (a.s += r[1], a.i += r[2], a.c += r[3], a.l += r[4], a.g += r[5], a), { s: 0, i: 0, c: 0, l: 0, g: 0 });
+    const px = sumPixel([...days]);
+    $("rangeLab").textContent = range === "all" ? `all data · ${fmtDay(allDays[0])} – ${fmtDay(DATA.throughDay)}` : `last ${range} days`;
+    const tiles = [
+      ["Amount spent", inr(t.s, 2), "ex-GST, as in Ads Manager"],
+      ["Impressions", num(t.i), t.i ? "CPM " + inr(t.s / t.i * 1000, 0) : ""],
+      ["Link clicks", num(t.c), t.i ? "CTR " + pct(t.c, t.i) + " · CPC " + per(t.s, t.c) : ""],
+      ["Leads from ads", num(t.l), "cost per lead " + per(t.s, t.l)],
+      ["Registrations from ads", num(t.g), "cost per registration " + per(t.s, t.g)],
+      ["Quiz starts", num(px.QuizStart || 0), "website, all traffic"],
+      ["Quizzes completed", num(px.QuizComplete || 0), "website, all traffic"],
+      ["Quiz answers", num(px.QuizAnswer || 0), "individual questions answered"],
+    ];
+    $("tiles").innerHTML = tiles.map(([k, v, h]) => `<div class="card tile"><div class="k">${k}</div><div class="v">${v}</div><div class="h">${h}</div></div>`).join("");
+  }
+
+  function sumPixel(days) {
+    const out = {};
+    for (const d of days) for (const [k, v] of Object.entries(DATA.pixel[d] || {})) out[k] = (out[k] || 0) + v;
+    return out;
+  }
+
+  function renderGroups() {
+    $("groups").innerHTML = ["quiz", "webinar"].map(g => {
+      const ads = DATA.ads.filter(a => a.group === g);
+      const t = ads.reduce((a, r) => (a.s += r.spend, a.i += r.impr, a.c += r.clicks, a.p += r.lpv, a.l += r.leads, a.g += r.regs, a), { s: 0, i: 0, c: 0, p: 0, l: 0, g: 0 });
+      const G = GROUP[g];
+      const main = g === "quiz" ? ["Leads", t.l, per(t.s, t.l)] : ["Registrations", t.g, per(t.s, t.g)];
+      return `<div class="card grp"><h3><i class="sw" style="background:${G.color}"></i>${G.label}</h3><div class="url">${G.url}</div>
+        <div class="kv">
+          <div><span>Spent</span><strong>${inr(t.s, 0)}</strong></div>
+          <div><span>Link clicks</span><strong>${num(t.c)}</strong></div>
+          <div><span>Landing page views</span><strong>${num(t.p)}</strong></div>
+          <div><span>${main[0]}</span><strong>${num(main[1])}</strong></div>
+          <div><span>Cost per ${main[0].toLowerCase().replace(/s$/, "")}</span><strong>${main[2]}</strong></div>
+          <div><span>Clicks → page</span><strong>${pct(t.p, t.c)}</strong></div>
+        </div></div>`;
+    }).join("");
+  }
+
+  const COLS = [
+    ["name", "Ad", "l"], ["spend", "Spent"], ["impr", "Impr."], ["reach", "Reach"], ["clicks", "Link clicks"], ["ctr", "CTR"],
+    ["cpc", "CPC"], ["lpv", "Page views"], ["leads", "Leads"], ["regs", "Registrations"], ["cpr", "Cost / reg."],
+  ];
+  let sortKey = "spend", sortDir = -1;
+  function renderAds() {
+    const val = (a, k) => k === "ctr" ? (a.impr ? a.clicks / a.impr : -1) : k === "cpc" ? (a.clicks ? a.spend / a.clicks : Infinity) : k === "cpr" ? (a.regs ? a.spend / a.regs : Infinity) : a[k];
+    const rows = [...DATA.ads].sort((a, b) => {
+      const x = val(a, sortKey), y = val(b, sortKey);
+      return typeof x === "string" ? sortDir * x.localeCompare(y) : sortDir * (x - y) || b.spend - a.spend;
+    });
+    const t = DATA.ads.reduce((a, r) => (a.s += r.spend, a.i += r.impr, a.r += r.reach, a.c += r.clicks, a.p += r.lpv, a.l += r.leads, a.g += r.regs, a), { s: 0, i: 0, r: 0, c: 0, p: 0, l: 0, g: 0 });
+    const gLabel = a => a.group === "old" ? `<span class="muted">${esc(a.adset)}</span>` : `<i class="sw" style="background:${GROUP[a.group].color}"></i> ${GROUP[a.group].label}`;
+    $("ads").innerHTML =
+      `<thead><tr>${COLS.map(([k, l, c]) => `<th class="${c || ""}" data-k="${k}" aria-sort="${k === sortKey ? (sortDir < 0 ? "descending" : "ascending") : "none"}">${l}${k === sortKey ? (sortDir < 0 ? " ↓" : " ↑") : ""}</th>`).join("")}</tr></thead>
+       <tbody>${rows.map(a => `<tr>
+         <td class="ad">${a.img ? `<img src="${esc(a.img)}" alt="" loading="lazy">` : `<span class="ph"></span>`}<div><b>${esc(a.name)}</b><small>${gLabel(a)} · <span class="status">${esc(a.status.replace(/_/g, " ").toLowerCase())}</span></small></div></td>
+         <td>${inr(a.spend, 2)}</td><td>${num(a.impr)}</td><td>${num(a.reach)}</td><td>${num(a.clicks)}</td>
+         <td>${pct(a.clicks, a.impr)}</td><td>${per(a.spend, a.clicks)}</td>
+         <td>${a.clicks && !a.lpv ? `<span style="color:var(--critical)" title="Clicks but no landing page views">! 0</span>` : num(a.lpv)}</td>
+         <td>${num(a.leads)}</td><td>${num(a.regs)}</td><td>${per(a.spend, a.regs)}</td></tr>`).join("")}</tbody>
+       <tfoot><tr><td class="l">Total · ${DATA.ads.length} ads</td><td>${inr(t.s, 2)}</td><td>${num(t.i)}</td><td class="muted">–</td><td>${num(t.c)}</td>
+         <td>${pct(t.c, t.i)}</td><td>${per(t.s, t.c)}</td><td>${num(t.p)}</td><td>${num(t.l)}</td><td>${num(t.g)}</td><td>${per(t.s, t.g)}</td></tr></tfoot>`;
+    $("ads").querySelectorAll("th").forEach(th => th.onclick = () => {
+      const k = th.dataset.k; sortDir = k === sortKey ? -sortDir : (k === "name" ? 1 : -1); sortKey = k; renderAds();
+    });
+  }
+
+  // Bar chart: one series, one axis. Rounded data-end, 2px gap between bars.
+  function barChart(svg, days, values, fmt, tipFor) {
+    const W = svg.clientWidth || 800, H = 220, L = 52, R = 8, T = 10, B = 26;
+    const max = Math.max(1, ...values);
+    const nice = (() => { const p = Math.pow(10, Math.floor(Math.log10(max))); const m = max / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10) * p; })();
+    const x = i => L + i * (W - L - R) / days.length, bw = Math.max(1, (W - L - R) / days.length - 2);
+    const y = v => T + (H - T - B) * (1 - v / nice);
+    let s = "";
+    for (let k = 0; k <= 4; k++) { const v = nice * k / 4; s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)" stroke-width="1"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v)}</text>`; }
+    const every = Math.ceil(days.length / (W < 500 ? 4 : 8));
+    days.forEach((d, i) => {
+      const v = values[i], h = (H - T - B) * v / nice, r = Math.min(4, bw / 2, h);
+      if (v > 0) s += `<path d="M${x(i)},${y(0)}V${y(v) + r}q0,-${r} ${r},-${r}H${x(i) + bw - r}q${r},0 ${r},${r}V${y(0)}Z" fill="var(--s1)"/>`;
+      s += `<rect data-i="${i}" x="${x(i) - 1}" y="${T}" width="${bw + 2}" height="${H - T - B}" fill="transparent"/>`;
+      if (i % every === 0) s += `<text x="${x(i) + bw / 2}" y="${H - 8}" text-anchor="${x(i) > W - 40 ? "end" : "middle"}">${fmtDay(d)}</text>`;
+    });
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.innerHTML = s;
+    svg.querySelectorAll("rect[data-i]").forEach(r => { r.onmousemove = e => showTip(e, tipFor(Number(r.dataset.i))); r.onmouseleave = hideTip; });
+  }
+
+  // Multi-line chart: one axis, 2px lines, direct legend above.
+  function lineChart(svg, days, series) {
+    const W = svg.clientWidth || 800, H = 220, L = 40, R = 8, T = 10, B = 26;
+    const max = Math.max(4, ...series.flatMap(s => s.values));
+    const x = i => L + (days.length < 2 ? 0 : i * (W - L - R) / (days.length - 1));
+    const y = v => T + (H - T - B) * (1 - v / max);
+    let s = "";
+    for (let k = 0; k <= 4; k++) { const v = Math.round(max * k / 4); s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${v}</text>`; }
+    const every = Math.ceil(days.length / (W < 500 ? 4 : 8));
+    days.forEach((d, i) => { if (i % every === 0) s += `<text x="${x(i)}" y="${H - 8}" text-anchor="${i === 0 ? "start" : x(i) > W - 30 ? "end" : "middle"}">${fmtDay(d)}</text>`; });
+    for (const se of series) {
+      s += `<polyline fill="none" stroke="${se.color}" stroke-width="2" stroke-linejoin="round" points="${se.values.map((v, i) => `${x(i)},${y(v)}`).join(" ")}"/>`;
+      se.values.forEach((v, i) => { if (v) s += `<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="${se.color}" stroke="var(--surface)" stroke-width="2"/>`; });
+    }
+    s += `<line id="xh" y1="${T}" y2="${H - B}" stroke="var(--text-3)" stroke-dasharray="3 3" visibility="hidden"/><rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent" id="hit"/>`;
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.innerHTML = s;
+    const xh = svg.querySelector("#xh"), hit = svg.querySelector("#hit");
+    hit.onmousemove = e => {
+      const box = svg.getBoundingClientRect(), px = (e.clientX - box.left) * W / box.width;
+      const i = Math.max(0, Math.min(days.length - 1, Math.round((px - L) / ((W - L - R) / Math.max(1, days.length - 1)))));
+      xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible");
+      showTip(e, `<b>${fmtDay(days[i])}</b><br>` + series.map(se => `${se.label}: ${se.values[i]}`).join("<br>"));
+    };
+    hit.onmouseleave = () => { xh.setAttribute("visibility", "hidden"); hideTip(); };
+  }
+
+  function renderSpend() {
+    const days = inRange(), by = Object.fromEntries(DATA.daily.map(r => [r[0], r]));
+    $("spendLab").textContent = "all ads · hover a bar for detail";
+    barChart($("spendChart"), days, days.map(d => by[d] ? by[d][1] : 0), v => v >= 1000 ? "₹" + (v / 1000) + "k" : "₹" + Math.round(v), i => {
+      const r = by[days[i]]; return `<b>${fmtDay(days[i])}</b><br>` + (r ? `Spent ${inr(r[1], 2)}<br>${num(r[2])} impressions<br>${num(r[3])} link clicks<br>${r[4]} leads · ${r[5]} registrations` : "No spend");
+    });
+  }
+
+  const STEPS = [
+    ["PageView", "Page views", "both pages"],
+    ["QuizCtaClick", "Start-quiz button clicks", "quiz page only"],
+    ["QuizStart", "Quiz started", "both pages"],
+    ["QuizComplete", "Quiz completed", "both pages"],
+    ["RegisterClick", "Register button clicks", "webinar page only"],
+    ["Lead", "Lead", "incl. KickStarter checkout"],
+    ["CompleteRegistration", "Webinar registrations", "both pages"],
+  ];
+  function renderFunnel() {
+    const px = sumPixel(inRange());
+    const max = Math.max(1, ...STEPS.map(s => px[s[0]] || 0));
+    $("funnel").innerHTML = STEPS.map(([k, l, w]) => {
+      const v = px[k] || 0;
+      return `<div class="frow"><div class="lab">${l}<small>${k} · ${w}</small></div><div><div class="bar" style="width:${v / max * 100}%" title="${num(v)}"></div></div><div class="n">${num(v)}</div></div>`;
+    }).join("");
+  }
+
+  function renderQuiz() {
+    const days = inRange();
+    const series = [
+      { key: "QuizStart", label: "Quiz started", color: "var(--s1)" },
+      { key: "QuizComplete", label: "Quiz completed", color: "var(--s2)" },
+      { key: "CompleteRegistration", label: "Webinar registrations", color: "var(--s3)" },
+    ].map(s => ({ ...s, values: days.map(d => (DATA.pixel[d] || {})[s.key] || 0) }));
+    $("quizLegend").innerHTML = series.map(s => `<span><i class="sw" style="background:${s.color}"></i>${s.label}</span>`).join("");
+    lineChart($("quizChart"), days, series);
+  }
+
+  function renderPixelTable() {
+    const days = [...inRange()].reverse();
+    const evs = ["PageView", "QuizCtaClick", "QuizStart", "QuizAnswer", "QuizComplete", "QuizSubmitFailed", "RegisterClick", "RegistrationAbandon", "RegistrationSyncFailed", "CompleteRegistration", "Lead", "InitiateCheckout", "Purchase"];
+    const tot = sumPixel(days);
+    $("pix").innerHTML = `<thead><tr><th class="l">Day (IST)</th>${evs.map(e => `<th>${e}</th>`).join("")}</tr></thead>
+      <tbody>${days.map(d => `<tr><td class="l">${fmtDay(d)}${d === DATA.throughDay ? ' <span class="muted">(part)</span>' : ""}</td>${evs.map(e => { const v = (DATA.pixel[d] || {})[e] || 0; return `<td class="${v ? "" : "muted"}">${v || "·"}</td>`; }).join("")}</tr>`).join("")}</tbody>
+      <tfoot><tr><td class="l">Total</td>${evs.map(e => `<td>${num(tot[e] || 0)}</td>`).join("")}</tr></tfoot>`;
+  }
+
+  function renderAll() { renderTiles(); renderGroups(); renderAds(); renderSpend(); renderFunnel(); renderQuiz(); renderPixelTable(); }
+  document.querySelectorAll(".filters button").forEach(b => b.onclick = () => {
+    range = b.dataset.range;
+    document.querySelectorAll(".filters button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    renderAll();
+  });
+  $("foot").innerHTML = `Ad figures: Meta Ads, lifetime per ad, ex-GST (Meta bills 18% GST on top). Leads and registrations are those Meta credits to an ad (7-day click, 1-day view).
+    Website events: Meta pixel ${DATA.account.pixel}, browser events only, every visitor (ads, organic and test traffic). Quiz events cannot be split per ad or per page;
+    QuizStart / QuizAnswer / QuizComplete fire on both the quiz page and the webinar page's own quiz. Days are IST. The latest day is partial and the previous ~2 days can still move slightly.`;
+  renderAll();
+  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { renderSpend(); renderQuiz(); }, 150); });
+})();
+</script>
+</body>
+</html>
