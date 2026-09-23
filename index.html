@@ -18,7 +18,7 @@
 <script>
 const DATA = {
   account: { name: "Deccansoft Home", id: "1864644430272738", currency: "INR", pixel: "666052152973589" },
-  updated: "23 Sep 2026, 10:00 PM IST",
+  updated: "23 Sep 2026, 11:15 PM IST",
   // Last day in the data. It is a part-day until tomorrow's refresh.
   // Reporting starts here; nothing before this day is shown.
   startDay: "2026-09-22",
@@ -38,7 +38,18 @@ const DATA = {
     { id: "120252971160740236", name: "W3_w8_bothsides",   group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w8-both-sides.jpg",   spend: 209.06, impr: 141387, reach: 142125, clicks: 595, lpv: 347, leads: 1, regs: 1 },
     { id: "120252971161800236", name: "W4_w9_twopostings", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w9-two-postings.jpg", spend: 501.82, impr: 6746, reach: 5905, clicks: 183, lpv: 102, leads: 6, regs: 6 },
     { id: "120252971165400236", name: "W5_w1_framework",   group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w1-framework.jpg",    spend: 208.93, impr: 2456, reach: 2353, clicks: 26, lpv: 18, leads: 1, regs: 1 },
-  ],
+    // --- video creatives, live 23 Sep ---
+    { id: "120252998965790236", name: "Q6_vid_q1_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q1-hook1-video.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998967060236", name: "Q7_vid_q2_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q2-hook1-video.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998967620236", name: "Q8_vid_q2_hook2", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q2-hook2-video.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998968480236", name: "Q9_vid_q3_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q3-hook-1.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998969250236", name: "Q10_vid_q3_hook2", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q3-hook-2.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998957880236", name: "W6_vid_w1_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w1-hook-1.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998959100236", name: "W7_vid_w1_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w1-hook-2.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998960200236", name: "W8_vid_w2_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w2-hook1-video.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998961480236", name: "W9_vid_w2_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w2-hook2-video.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998962980236", name: "W10_vid_w3_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w3-hook-1.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998964470236", name: "W11_vid_w3_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w3-hook-2.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },  ],
 
   // Ad spend per day (IST), all ads summed: [date, spend, impressions, linkClicks, leads, registrations]
   daily: [
@@ -55,6 +66,8 @@ const DATA = {
 
   // Free-text notes shown at the top. level: "critical" | "serious" | "warning" | "good"
   notes: [
+    { level: "good", title: "11 video ads went live on 23 Sep",
+      text: "Vertical 1080×1920, 23–34s, UGC hooks. Six on the webinar page (W1–W3, two hooks each), five on the quiz page (Q1–Q3). Added alongside the image ads, so nothing was paused and neither ad set's budget changed — they simply compete for the same ₹1,500/day." },
     { level: "critical", title: "W3 Both Sides is buying junk impressions",
       text: "139,452 impressions for ₹137 on 23 Sep — 20× the impressions of any other ad for a tenth of the money — and 1 registration out of 584 clicks. That is the cheap-placement pattern (usually Audience Network). Worth pausing if it repeats." },
     { level: "warning", title: "The quiz leads are mostly the free-assessment crowd",
