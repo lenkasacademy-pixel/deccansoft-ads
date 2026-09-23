@@ -18,47 +18,53 @@
 <script>
 const DATA = {
   account: { name: "Deccansoft Home", id: "1864644430272738", currency: "INR", pixel: "666052152973589" },
-  updated: "22 Sep 2026, 10:50 PM IST",
+  updated: "23 Sep 2026, 10:00 PM IST",
   // Last day in the data. It is a part-day until tomorrow's refresh.
   // Reporting starts here; nothing before this day is shown.
   startDay: "2026-09-22",
-  throughDay: "2026-09-22",
+  throughDay: "2026-09-23",
 
   // One row per ad. group: "quiz" | "webinar". Reporting starts 22 Sep 2026; earlier data is deliberately left out.
   // Totals are lifetime for the ad. img: thumbnail URL or "".
   ads: [
     // --- FDE Webinar 3 Oct | Quiz page vs Webinar page (campaign 120252971054530236) ---
-    { id: "120252971167360236", name: "Q1_w11_eventcard",  group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w11-event-card.jpg",  spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971168770236", name: "Q2_w7_jobposting",  group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w7-job-posting.jpg",  spend: 0, impr: 1, reach: 1, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971170140236", name: "Q3_w8_bothsides",   group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w8-both-sides.jpg",   spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971171160236", name: "Q4_w9_twopostings", group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w9-two-postings.jpg", spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971172000236", name: "Q5_w1_framework",   group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w1-framework.jpg",    spend: 0, impr: 0, reach: 0, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252971157710236", name: "W1_w11_eventcard",  group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w11-event-card.jpg",  spend: 662.03, impr: 7020, reach: 5935, clicks: 50, lpv: 33, leads: 2, regs: 2 },
-    { id: "120252971159290236", name: "W2_w7_jobposting",  group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w7-job-posting.jpg",  spend: 69.26, impr: 964, reach: 950, clicks: 10, lpv: 6, leads: 0, regs: 0 },
-    { id: "120252971160740236", name: "W3_w8_bothsides",   group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w8-both-sides.jpg",   spend: 71.81, impr: 1923, reach: 1905, clicks: 11, lpv: 6, leads: 0, regs: 0 },
-    { id: "120252971161800236", name: "W4_w9_twopostings", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w9-two-postings.jpg", spend: 132.23, impr: 3083, reach: 2991, clicks: 21, lpv: 16, leads: 3, regs: 3 },
-    { id: "120252971165400236", name: "W5_w1_framework",   group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w1-framework.jpg",    spend: 146.92, impr: 2241, reach: 2183, clicks: 14, lpv: 9, leads: 0, regs: 0 },
+    { id: "120252971167360236", name: "Q1_w11_eventcard",  group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w11-event-card.jpg",  spend: 11.65, impr: 233, reach: 218, clicks: 5, lpv: 4, leads: 0, regs: 0 },
+    { id: "120252971168770236", name: "Q2_w7_jobposting",  group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w7-job-posting.jpg",  spend: 17.55, impr: 68, reach: 41, clicks: 7, lpv: 2, leads: 0, regs: 0 },
+    { id: "120252971170140236", name: "Q3_w8_bothsides",   group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w8-both-sides.jpg",   spend: 5.64, impr: 791, reach: 782, clicks: 8, lpv: 4, leads: 0, regs: 0 },
+    { id: "120252971171160236", name: "Q4_w9_twopostings", group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w9-two-postings.jpg", spend: 6.12, impr: 67, reach: 47, clicks: 8, lpv: 2, leads: 0, regs: 0 },
+    { id: "120252971172000236", name: "Q5_w1_framework",   group: "quiz",    adset: "Quiz page",    status: "ACTIVE", img: "thumbs/w1-framework.jpg",    spend: 744.41, impr: 2960, reach: 1695, clicks: 458, lpv: 214, leads: 22, regs: 3 },
+    { id: "120252971157710236", name: "W1_w11_eventcard",  group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w11-event-card.jpg",  spend: 1350.22, impr: 23662, reach: 21380, clicks: 394, lpv: 217, leads: 6, regs: 6 },
+    { id: "120252971159290236", name: "W2_w7_jobposting",  group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w7-job-posting.jpg",  spend: 90.06, impr: 1107, reach: 1093, clicks: 11, lpv: 7, leads: 0, regs: 0 },
+    { id: "120252971160740236", name: "W3_w8_bothsides",   group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w8-both-sides.jpg",   spend: 209.06, impr: 141387, reach: 142125, clicks: 595, lpv: 347, leads: 1, regs: 1 },
+    { id: "120252971161800236", name: "W4_w9_twopostings", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w9-two-postings.jpg", spend: 501.82, impr: 6746, reach: 5905, clicks: 183, lpv: 102, leads: 6, regs: 6 },
+    { id: "120252971165400236", name: "W5_w1_framework",   group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/w1-framework.jpg",    spend: 208.93, impr: 2456, reach: 2353, clicks: 26, lpv: 18, leads: 1, regs: 1 },
   ],
 
   // Ad spend per day (IST), all ads summed: [date, spend, impressions, linkClicks, leads, registrations]
   daily: [
-    ["2026-09-22", 1082.25, 15232, 106, 5, 5],
+    ["2026-09-22", 1103.09, 16314, 263, 5, 5],
+    ["2026-09-23", 2042.37, 163163, 1432, 31, 12],
   ],
 
   // Website events from the Meta pixel, BROWSER ONLY (the server copy of each event is not counted,
   // so each real action counts once). Per IST day. Includes all traffic, not only ads.
   pixel: {
-    "2026-09-22": { PageView: 117, QuizCtaClick: 2, QuizStart: 24, QuizAnswer: 88, QuizComplete: 7, QuizSubmitFailed: 1, RegisterClick: 20, RegistrationAbandon: 1, CompleteRegistration: 5, Lead: 10, InitiateCheckout: 15, Purchase: 5 },
+    "2026-09-22": { PageView: 374, QuizCtaClick: 2, QuizStart: 123, QuizAnswer: 192, QuizComplete: 15, QuizSubmitFailed: 1, RegisterClick: 119, RegistrationAbandon: 15, RegistrationSyncFailed: 2, CompleteRegistration: 8, Lead: 13, InitiateCheckout: 15, Purchase: 5 },
+    "2026-09-23": { PageView: 1112, QuizCtaClick: 145, QuizStart: 156, QuizAnswer: 681, QuizComplete: 32, QuizLead: 22, QuizSubmitFailed: 4, WebinarQuestionsStart: 37, WebinarQuestionAnswer: 80, WebinarQuestionsComplete: 9, RegisterClick: 37, RegistrationAbandon: 1, WebinarInviteShown: 11, WebinarDetailsClick: 3, CommunityJoin: 23, CompleteRegistration: 9, Lead: 33, InitiateCheckout: 16, Purchase: 5 },
   },
 
   // Free-text notes shown at the top. level: "critical" | "serious" | "warning" | "good"
   notes: [
-    { level: "critical", title: "The Quiz page ad set is not spending",
-      text: "Both ad sets went live at 4:03 PM IST. The Webinar page ad set has spent ₹1,082; the Quiz page ad set has spent ₹0 on 3 impressions. Nothing is blocked: Meta is simply choosing not to spend on it, which usually means it expects too few Leads from it. The AI-360 quiz page had only 2 start-quiz clicks today, so the quiz numbers below are almost all from the webinar page's own quiz." },
-    { level: "good", title: "5 webinar registrations on day 1, ₹216 each",
-      text: "All from the Webinar page ad set. W4 Two Postings: 3 registrations for ₹132. W1 Event Card: 2 for ₹662. Landing-page views are 70 of 106 link clicks (66%), so this time the clicks are reaching the page." },
+    { level: "critical", title: "W3 Both Sides is buying junk impressions",
+      text: "139,452 impressions for ₹137 on 23 Sep — 20× the impressions of any other ad for a tenth of the money — and 1 registration out of 584 clicks. That is the cheap-placement pattern (usually Audience Network). Worth pausing if it repeats." },
+    { level: "warning", title: "The quiz leads are mostly the free-assessment crowd",
+      text: "The quiz ad set found delivery on 23 Sep: 22 leads at ₹34. Nearly all answered “free resources only” or under ₹5,000. From 3 Oct only budgets of ₹15,000+ are reported to Meta as a Lead, so this number will drop sharply — that is the gate working, not performance falling." },
+    { level: "good", title: "14 webinar registrations in two days, ₹168 each",
+      text: "W4 Two Postings is the efficient one: 6 registrations for ₹502. W1 Event Card also has 6, but for ₹1,350. Landing-page views are 691 of 1,205 clicks (57%)." },
     { level: "warning", title: "Most ‘Lead’ and all ‘Purchase’ events are the KickStarter checkout",
-      text: "Purchase/InitiateCheckout/Lead arrive in bursts of 5/15 from the KickStarter checkout on the same pixel. Count webinar sign-ups by Registrations, not Lead." },
+      text: "Purchase/InitiateCheckout/Lead arrive in bursts of 5/15 from the KickStarter checkout on the same pixel. Count webinar sign-ups by Registrations, not Lead. QuizLead is the quiz’s own, unambiguous event." },
+    { level: "good", title: "The webinar page’s questions now report under their own names",
+      text: "Deployed 23 Sep: the webinar registration questions fire WebinarQuestionsStart / WebinarQuestionAnswer / WebinarQuestionsComplete, so QuizStart / QuizAnswer / QuizComplete now mean the AI-360 quiz alone. Figures before 23 Sep mix the two." },
   ],
 };
 </script>
@@ -68,7 +74,7 @@ const DATA = {
     color-scheme: light;
     --bg: #f6f5f2; --surface: #fcfcfb; --surface-2: #f0efec; --border: #e4e2dc;
     --text: #0b0b0b; --text-2: #52514e; --text-3: #7a7973;
-    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
     --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
     --grid: #e4e2dc;
   }
@@ -77,14 +83,14 @@ const DATA = {
       color-scheme: dark;
       --bg: #121211; --surface: #1a1a19; --surface-2: #232321; --border: #33332f;
       --text: #ffffff; --text-2: #c3c2b7; --text-3: #8f8e86;
-      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --grid: #33332f;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --grid: #33332f;
     }
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
     --bg: #121211; --surface: #1a1a19; --surface-2: #232321; --border: #33332f;
     --text: #ffffff; --text-2: #c3c2b7; --text-3: #8f8e86;
-    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --grid: #33332f;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --grid: #33332f;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
@@ -359,11 +365,12 @@ const DATA = {
 
   const STEPS = [
     ["PageView", "Page views", "both pages"],
-    ["QuizCtaClick", "Start-quiz button clicks", "quiz page only"],
-    ["QuizStart", "Quiz started", "both pages"],
-    ["QuizComplete", "Quiz completed", "both pages"],
-    ["RegisterClick", "Register button clicks", "webinar page only"],
-    ["Lead", "Lead", "incl. KickStarter checkout"],
+    ["QuizCtaClick", "Start-quiz button clicks", "quiz page"],
+    ["QuizStart", "Quiz started", "quiz page"],
+    ["QuizComplete", "Quiz completed", "quiz page"],
+    ["QuizLead", "Quiz lead (details left)", "quiz page"],
+    ["WebinarQuestionsStart", "Registration questions started", "webinar page"],
+    ["WebinarQuestionsComplete", "Registration questions finished", "webinar page"],
     ["CompleteRegistration", "Webinar registrations", "both pages"],
   ];
   function renderFunnel() {
@@ -380,7 +387,8 @@ const DATA = {
     const series = [
       { key: "QuizStart", label: "Quiz started", color: "var(--s1)" },
       { key: "QuizComplete", label: "Quiz completed", color: "var(--s2)" },
-      { key: "CompleteRegistration", label: "Webinar registrations", color: "var(--s3)" },
+      { key: "QuizLead", label: "Quiz leads", color: "var(--s3)" },
+      { key: "CompleteRegistration", label: "Webinar registrations", color: "var(--s4)" },
     ].map(s => ({ ...s, values: days.map(d => (DATA.pixel[d] || {})[s.key] || 0) }));
     $("quizLegend").innerHTML = series.map(s => `<span><i class="sw" style="background:${s.color}"></i>${s.label}</span>`).join("");
     lineChart($("quizChart"), days, series);
@@ -388,7 +396,10 @@ const DATA = {
 
   function renderPixelTable() {
     const days = [...inRange()].reverse();
-    const evs = ["PageView", "QuizCtaClick", "QuizStart", "QuizAnswer", "QuizComplete", "QuizSubmitFailed", "RegisterClick", "RegistrationAbandon", "RegistrationSyncFailed", "CompleteRegistration", "Lead", "InitiateCheckout", "Purchase"];
+    const evs = ["PageView", "QuizCtaClick", "QuizStart", "QuizAnswer", "QuizComplete", "QuizLead", "QuizSubmitFailed",
+      "WebinarQuestionsStart", "WebinarQuestionAnswer", "WebinarQuestionsComplete", "RegisterClick",
+      "RegistrationAbandon", "RegistrationSyncFailed", "WebinarInviteShown", "WebinarDetailsClick",
+      "CommunityJoin", "CompleteRegistration", "Lead", "InitiateCheckout", "Purchase"];
     const tot = sumPixel(days);
     $("pix").innerHTML = `<thead><tr><th class="l">Day (IST)</th>${evs.map(e => `<th>${e}</th>`).join("")}</tr></thead>
       <tbody>${days.map(d => `<tr><td class="l">${fmtDay(d)}${d === DATA.throughDay ? ' <span class="muted">(part)</span>' : ""}</td>${evs.map(e => { const v = (DATA.pixel[d] || {})[e] || 0; return `<td class="${v ? "" : "muted"}">${v || "·"}</td>`; }).join("")}</tr>`).join("")}</tbody>
@@ -402,8 +413,9 @@ const DATA = {
     renderAll();
   });
   $("foot").innerHTML = `Ad figures: Meta Ads, lifetime per ad, ex-GST (Meta bills 18% GST on top). Leads and registrations are those Meta credits to an ad (7-day click, 1-day view).
-    Website events: Meta pixel ${DATA.account.pixel}, browser events only, every visitor (ads, organic and test traffic). Quiz events cannot be split per ad or per page;
-    QuizStart / QuizAnswer / QuizComplete fire on both the quiz page and the webinar page's own quiz. Days are IST. The latest day is partial and the previous ~2 days can still move slightly.`;
+    Website events: Meta pixel ${DATA.account.pixel}, browser events only, every visitor (ads, organic and test traffic). Website events still cannot be split per ad — Meta reports them for the site, not the ad.
+    They can now be split per page: since 23 Sep the webinar page's own registration questions fire WebinarQuestions*, so QuizStart / QuizAnswer / QuizComplete
+    mean the AI-360 quiz alone. Anything before 23 Sep mixes the two. Days are IST. The latest day is partial and the previous ~2 days can still move slightly.`;
   renderAll();
   let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { renderSpend(); renderQuiz(); }, 150); });
 })();
