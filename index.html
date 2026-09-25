@@ -59,12 +59,15 @@ const DATA = {
     ["2026-09-25", 932.79, 44628, 229, 16, 14],
   ],
 
-  // Website events from the Meta pixel, BROWSER ONLY (the server copy of each event is not counted,
+  // Website events from the Meta pixel, BROWSER ONLY. Purchase and
+  // InitiateCheckout are deliberately left out: they come from another page on
+  // the same site and have nothing to do with this campaign.
+  // (the server copy of each event is not counted,
   // so each real action counts once). Per IST day. Includes all traffic, not only ads.
   pixel: {
-    "2026-09-22": { PageView: 374, QuizCtaClick: 2, QuizStart: 123, QuizAnswer: 192, QuizComplete: 15, QuizSubmitFailed: 1, RegisterClick: 119, RegistrationAbandon: 15, RegistrationSyncFailed: 2, CompleteRegistration: 8, Lead: 13, InitiateCheckout: 15, Purchase: 5 },
-    "2026-09-23": { PageView: 1112, QuizCtaClick: 145, QuizStart: 156, QuizAnswer: 681, QuizComplete: 32, QuizLead: 22, QuizSubmitFailed: 4, WebinarQuestionsStart: 37, WebinarQuestionAnswer: 80, WebinarQuestionsComplete: 9, RegisterClick: 37, RegistrationAbandon: 1, WebinarInviteShown: 11, WebinarDetailsClick: 3, CommunityJoin: 23, CompleteRegistration: 9, Lead: 33, InitiateCheckout: 16, Purchase: 5 },
-    "2026-09-24": { PageView: 380, QuizCtaClick: 28, QuizStart: 30, QuizAnswer: 187, QuizComplete: 10, QuizLead: 8, WebinarQuestionsStart: 68, WebinarQuestionAnswer: 498, WebinarQuestionsComplete: 60, RegisterClick: 68, WebinarInviteShown: 8, WebinarDetailsClick: 2, CommunityJoin: 7, CompleteRegistration: 55, Lead: 71, InitiateCheckout: 15, Purchase: 5 },
+    "2026-09-22": { PageView: 374, QuizCtaClick: 2, QuizStart: 123, QuizAnswer: 192, QuizComplete: 15, QuizSubmitFailed: 1, RegisterClick: 119, RegistrationAbandon: 15, RegistrationSyncFailed: 2, CompleteRegistration: 8, Lead: 13 },
+    "2026-09-23": { PageView: 1112, QuizCtaClick: 145, QuizStart: 156, QuizAnswer: 681, QuizComplete: 32, QuizLead: 22, QuizSubmitFailed: 4, WebinarQuestionsStart: 37, WebinarQuestionAnswer: 80, WebinarQuestionsComplete: 9, RegisterClick: 37, RegistrationAbandon: 1, WebinarInviteShown: 11, WebinarDetailsClick: 3, CommunityJoin: 23, CompleteRegistration: 9, Lead: 33 },
+    "2026-09-24": { PageView: 380, QuizCtaClick: 28, QuizStart: 30, QuizAnswer: 187, QuizComplete: 10, QuizLead: 8, WebinarQuestionsStart: 68, WebinarQuestionAnswer: 498, WebinarQuestionsComplete: 60, RegisterClick: 68, WebinarInviteShown: 8, WebinarDetailsClick: 2, CommunityJoin: 7, CompleteRegistration: 55, Lead: 71 },
     "2026-09-25": { PageView: 122, QuizCtaClick: 10, QuizStart: 10, QuizAnswer: 58, QuizComplete: 3, QuizLead: 3, WebinarQuestionsStart: 10, WebinarQuestionAnswer: 72, WebinarQuestionsComplete: 9, RegisterClick: 10, WebinarInviteShown: 3, WebinarDetailsClick: 1, CommunityJoin: 1, CompleteRegistration: 10, Lead: 12 },
   },
 
@@ -76,8 +79,8 @@ const DATA = {
       text: "156,160 impressions but a reach of 2,236 — the same handful of accounts seeing it about 70 times each — for 1 registration. It has nearly stopped spending on its own. Pausing it costs nothing and tidies the ad set." },
     { level: "warning", title: "The quiz side costs much more per lead than it looks",
       text: "₹2,443 for 37 leads (₹66). Q5 Framework is most of it: ₹1,783 for 34 leads. The five quiz videos have spent ₹223 between them and produced none. Nearly every lead is still a “free resources” answer — the 3 Oct gate will stop those counting as leads." },
-    { level: "warning", title: "Most ‘Lead’ and all ‘Purchase’ events are the KickStarter checkout",
-      text: "Purchase/InitiateCheckout/Lead arrive in bursts of 5/15 from the KickStarter checkout on the same pixel. Count webinar sign-ups by Registrations and quiz leads by QuizLead." },
+    { level: "warning", title: "Count sign-ups by Registrations, not by ‘Lead’",
+      text: "The webinar page fires Lead and CompleteRegistration on the same submit, so one sign-up appears under both names. Other pages on events.bestitcourses.com share this pixel and fire their own Lead events too. Registrations (webinar) and QuizLead (quiz) are the unambiguous ones." },
   ],
 };
 </script>
@@ -154,7 +157,21 @@ const DATA = {
   .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-2); margin-bottom: 6px; }
   .legend span { display: inline-flex; align-items: center; gap: 6px; }
   .tip { position: fixed; pointer-events: none; background: var(--text); color: var(--bg); padding: 6px 9px; border-radius: 6px; font-size: 12px; line-height: 1.4; z-index: 10; }
-  .funnel { display: grid; gap: 6px; }
+  .funnel { display: grid; gap: 8px; margin-top: 6px; }
+  .fstep { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 1.1fr) 52px; gap: 10px; align-items: center; }
+  .flab { font-size: 13px; }
+  .flab small { display: block; color: var(--text-3); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .ftrack { min-width: 0; }
+  .fbar { height: 14px; border-radius: 0 4px 4px 0; min-width: 3px; }
+  .fpct { font-size: 12px; color: var(--text-2); text-align: right; font-variant-numeric: tabular-nums; }
+  .fhead { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(0, 1.1fr) 52px; gap: 10px; font-size: 11px; color: var(--text-3); margin-top: 14px; }
+  .fhead span:last-child { text-align: right; }
+  .fsum { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-2); }
+  .fsum b { color: var(--text); font-variant-numeric: tabular-nums; }
+  .fpage { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 12px; color: var(--text-3); }
+  .fpage > span { display: block; margin-bottom: 6px; }
+  .fpage div { display: flex; justify-content: space-between; padding: 2px 0; color: var(--text-2); }
+  .fpage b { font-variant-numeric: tabular-nums; }
   .frow { display: grid; grid-template-columns: 170px 1fr 70px; gap: 10px; align-items: center; }
   .frow .lab small { display: block; color: var(--text-3); font-size: 11px; }
   .bar { height: 18px; border-radius: 0 4px 4px 0; background: var(--s1); min-width: 2px; }
@@ -195,8 +212,8 @@ const DATA = {
     <svg class="chart" id="spendChart" role="img" aria-label="Daily ad spend"></svg>
   </div>
 
-  <h2>Quiz &amp; registration funnel <small id="funnelLab">website events, browser only, all traffic</small></h2>
-  <div class="card"><div class="funnel" id="funnel"></div></div>
+  <h2>The journey, step by step <small>what each ad set's traffic did</small></h2>
+  <div class="split" id="funnels"></div>
 
   <h2>Quiz activity per day</h2>
   <div class="card">
@@ -376,22 +393,73 @@ const DATA = {
     });
   }
 
-  const STEPS = [
-    ["PageView", "Page views", "both pages"],
-    ["QuizCtaClick", "Start-quiz button clicks", "quiz page"],
-    ["QuizStart", "Quiz started", "quiz page"],
-    ["QuizComplete", "Quiz completed", "quiz page"],
-    ["QuizLead", "Quiz lead (details left)", "quiz page"],
-    ["WebinarQuestionsStart", "Registration questions started", "webinar page"],
-    ["WebinarQuestionsComplete", "Registration questions finished", "webinar page"],
-    ["CompleteRegistration", "Webinar registrations", "both pages"],
-  ];
+  // One funnel per path, built from what Meta credits to that ad set, so every
+  // step is the same kind of number and the drop-offs can be trusted. The page
+  // activity underneath comes from the website's own events, which count every
+  // visitor -- ads, organic and our own testing -- so it is shown apart rather
+  // than mixed into the funnel.
+  const FUNNELS = {
+    webinar: {
+      steps: [
+        ["impr", "Saw the ad", "impressions"],
+        ["clicks", "Clicked", "link clicks"],
+        ["lpv", "Page opened", "landing page views"],
+        ["regs", "Reserved a seat", "registrations"],
+      ],
+      page: [
+        ["WebinarQuestionsStart", "Started the registration questions"],
+        ["WebinarQuestionsComplete", "Finished them"],
+      ],
+    },
+    quiz: {
+      steps: [
+        ["impr", "Saw the ad", "impressions"],
+        ["clicks", "Clicked", "link clicks"],
+        ["lpv", "Page opened", "landing page views"],
+        ["leads", "Left their details", "leads"],
+        ["regs", "Also booked the webinar", "registrations"],
+      ],
+      page: [
+        ["QuizStart", "Started the quiz"],
+        ["QuizComplete", "Finished the quiz"],
+      ],
+    },
+  };
+
   function renderFunnel() {
     const px = sumPixel(inRange());
-    const max = Math.max(1, ...STEPS.map(s => px[s[0]] || 0));
-    $("funnel").innerHTML = STEPS.map(([k, l, w]) => {
-      const v = px[k] || 0;
-      return `<div class="frow"><div class="lab">${l}<small>${k} · ${w}</small></div><div><div class="bar" style="width:${v / max * 100}%" title="${num(v)}"></div></div><div class="n">${num(v)}</div></div>`;
+    $("funnels").innerHTML = ["webinar", "quiz"].map((g) => {
+      const G = GROUP[g], F = FUNNELS[g];
+      const t = DATA.ads.filter((a) => a.group === g).reduce(
+        (acc, r) => (acc.impr += r.impr, acc.clicks += r.clicks, acc.lpv += r.lpv,
+                     acc.leads += r.leads, acc.regs += r.regs, acc.spend += r.spend, acc),
+        { impr: 0, clicks: 0, lpv: 0, leads: 0, regs: 0, spend: 0 });
+      const top = Math.max(1, t.impr);
+      const rows = F.steps.map(([k, label, unit], i) => {
+        const v = t[k], prev = i ? t[F.steps[i - 1][0]] : null;
+        // Square-root widths: a funnel that starts at 60,000 and ends at 79
+        // is unreadable on a linear scale -- every step after the first is a
+        // hairline. The number beside each bar stays the truth.
+        const w = Math.max(1.5, Math.sqrt(v / top) * 100);
+        const step = prev ? (prev ? (v / prev * 100) : 0) : null;
+        return `<div class="fstep">
+          <div class="flab">${label}<small>${num(v)} ${unit}</small></div>
+          <div class="ftrack"><div class="fbar" style="width:${w}%;background:${G.color}"></div></div>
+          <div class="fpct">${step === null ? "" : (step >= 10 ? step.toFixed(0) : step.toFixed(1)) + "%"}</div>
+        </div>`;
+      }).join("");
+      const last = F.steps[F.steps.length - 1];
+      const result = g === "webinar" ? t.regs : t.leads;
+      return `<div class="card grp">
+        <h3><i class="sw" style="background:${G.color}"></i>${G.label}</h3>
+        <div class="url">${G.url}</div>
+        <div class="fhead"><span>Step</span><span></span><span>of previous</span></div>
+        <div class="funnel">${rows}</div>
+        <div class="fsum"><b>${inr(t.spend, 0)}</b> spent · <b>${num(result)}</b> ${g === "webinar" ? "registrations" : "leads"} · <b>${per(t.spend, result)}</b> each</div>
+        <div class="fpage"><span>On the page — every visitor, including people who never clicked an ad</span>
+          ${F.page.map(([k, label]) => `<div><em>${label}</em><b>${num(px[k] || 0)}</b></div>`).join("")}
+        </div>
+      </div>`;
     }).join("");
   }
 
@@ -412,7 +480,7 @@ const DATA = {
     const evs = ["PageView", "QuizCtaClick", "QuizStart", "QuizAnswer", "QuizComplete", "QuizLead", "QuizSubmitFailed",
       "WebinarQuestionsStart", "WebinarQuestionAnswer", "WebinarQuestionsComplete", "RegisterClick",
       "RegistrationAbandon", "RegistrationSyncFailed", "WebinarInviteShown", "WebinarDetailsClick",
-      "CommunityJoin", "CompleteRegistration", "Lead", "InitiateCheckout", "Purchase"];
+      "CommunityJoin", "CompleteRegistration", "Lead"];
     const tot = sumPixel(days);
     $("pix").innerHTML = `<thead><tr><th class="l">Day (IST)</th>${evs.map(e => `<th>${e}</th>`).join("")}</tr></thead>
       <tbody>${days.map(d => `<tr><td class="l">${fmtDay(d)}${d === DATA.throughDay ? ' <span class="muted">(part)</span>' : ""}</td>${evs.map(e => { const v = (DATA.pixel[d] || {})[e] || 0; return `<td class="${v ? "" : "muted"}">${v || "·"}</td>`; }).join("")}</tr>`).join("")}</tbody>
