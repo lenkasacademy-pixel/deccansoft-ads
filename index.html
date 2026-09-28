@@ -18,47 +18,48 @@
 <script>
 const DATA = {
   account: { name: "Deccansoft Home", id: "1864644430272738", currency: "INR", pixel: "666052152973589" },
-  updated: "27 Sep 2026, 8:35 AM IST",
+  updated: "28 Sep 2026, 10:15 AM IST",
   // Last day in the data. It is a part-day until tomorrow's refresh.
   // Reporting starts here; nothing before this day is shown.
   startDay: "2026-09-22",
-  throughDay: "2026-09-27",
+  throughDay: "2026-09-28",
 
   // One row per ad. group: "quiz" | "webinar". Reporting starts 22 Sep 2026; earlier data is deliberately left out.
   // Totals are lifetime for the ad. img: thumbnail URL or "".
   ads: [
     // --- FDE Webinar 3 Oct | Quiz page vs Webinar page (campaign 120252971054530236) ---
-    { id: "120252971167360236", name: "Q1_w11_eventcard",  group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w11-event-card.jpg",  spend: 147.68, impr: 8096, reach: 804, clicks: 42, lpv: 28, leads: 1, regs: 0 },
+    { id: "120252971167360236", name: "Q1_w11_eventcard",  group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w11-event-card.jpg",  spend: 147.68, impr: 8097, reach: 805, clicks: 42, lpv: 28, leads: 1, regs: 0 },
     { id: "120252971168770236", name: "Q2_w7_jobposting",  group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w7-job-posting.jpg",  spend: 70.79, impr: 571, reach: 410, clicks: 13, lpv: 6, leads: 0, regs: 0 },
-    { id: "120252971170140236", name: "Q3_w8_bothsides",   group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w8-both-sides.jpg",   spend: 82.92, impr: 11681, reach: 671, clicks: 72, lpv: 44, leads: 0, regs: 0 },
+    { id: "120252971170140236", name: "Q3_w8_bothsides",   group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w8-both-sides.jpg",   spend: 82.92, impr: 11682, reach: 672, clicks: 72, lpv: 44, leads: 0, regs: 0 },
     { id: "120252971171160236", name: "Q4_w9_twopostings", group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w9-two-postings.jpg", spend: 580.57, impr: 94763, reach: 2205, clicks: 458, lpv: 296, leads: 6, regs: 4 },
-    { id: "120252971172000236", name: "Q5_w1_framework",   group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w1-framework.jpg",    spend: 3699.4, impr: 22691, reach: 9860, clicks: 708, lpv: 370, leads: 47, regs: 15 },
+    { id: "120252971172000236", name: "Q5_w1_framework",   group: "quiz",    adset: "Quiz page",    status: "PAUSED", img: "thumbs/w1-framework.jpg",    spend: 3699.53, impr: 22695, reach: 9861, clicks: 708, lpv: 370, leads: 47, regs: 15 },
     { id: "120252971157710236", name: "W1_w11_eventcard",  group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w11-event-card.jpg",  spend: 1821.01, impr: 34249, reach: 15604, clicks: 455, lpv: 264, leads: 13, regs: 14 },
     { id: "120252971159290236", name: "W2_w7_jobposting",  group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w7-job-posting.jpg",  spend: 128.95, impr: 1324, reach: 1269, clicks: 14, lpv: 10, leads: 1, regs: 1 },
     { id: "120252971160740236", name: "W3_w8_bothsides",   group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w8-both-sides.jpg",   spend: 225.49, impr: 156166, reach: 2243, clicks: 691, lpv: 446, leads: 1, regs: 1 },
     { id: "120252971161800236", name: "W4_w9_twopostings", group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w9-two-postings.jpg", spend: 575.96, impr: 7297, reach: 5322, clicks: 212, lpv: 120, leads: 7, regs: 7 },
     { id: "120252971165400236", name: "W5_w1_framework",   group: "webinar", adset: "Webinar page", status: "PAUSED", img: "thumbs/w1-framework.jpg",    spend: 232.1, impr: 2511, reach: 2101, clicks: 27, lpv: 19, leads: 2, regs: 2 },
     // --- video creatives, live 23 Sep ---
-    { id: "120252998965790236", name: "Q6_vid_q1_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q1-hook1-video.jpg", spend: 158.36, impr: 809, reach: 506, clicks: 9, lpv: 8, leads: 1, regs: 1 },
-    { id: "120252998967060236", name: "Q7_vid_q2_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q2-hook1-video.jpg", spend: 368.22, impr: 2836, reach: 1394, clicks: 57, lpv: 43, leads: 0, regs: 0 },
-    { id: "120252998967620236", name: "Q8_vid_q2_hook2", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q2-hook2-video.jpg", spend: 102.29, impr: 388, reach: 326, clicks: 10, lpv: 10, leads: 1, regs: 0 },
-    { id: "120252998968480236", name: "Q9_vid_q3_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q3-hook-1.jpg", spend: 1029.02, impr: 4145, reach: 3283, clicks: 45, lpv: 33, leads: 9, regs: 4 },
-    { id: "120252998969250236", name: "Q10_vid_q3_hook2", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q3-hook-2.jpg", spend: 93.41, impr: 537, reach: 451, clicks: 11, lpv: 10, leads: 0, regs: 0 },
-    { id: "120252998957880236", name: "W6_vid_w1_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w1-hook-1.jpg", spend: 51.3, impr: 233, reach: 196, clicks: 4, lpv: 4, leads: 0, regs: 0 },
-    { id: "120252998959100236", name: "W7_vid_w1_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w1-hook-2.jpg", spend: 12.6, impr: 75, reach: 67, clicks: 0, lpv: 0, leads: 0, regs: 0 },
-    { id: "120252998960200236", name: "W8_vid_w2_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w2-hook1-video.jpg", spend: 916.43, impr: 22173, reach: 5476, clicks: 156, lpv: 129, leads: 34, regs: 33 },
-    { id: "120252998961480236", name: "W9_vid_w2_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w2-hook2-video.jpg", spend: 94.21, impr: 498, reach: 408, clicks: 7, lpv: 7, leads: 3, regs: 3 },
-    { id: "120252998962980236", name: "W10_vid_w3_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w3-hook-1.jpg", spend: 427.8, impr: 2846, reach: 2132, clicks: 41, lpv: 37, leads: 14, regs: 14 },
-    { id: "120252998964470236", name: "W11_vid_w3_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w3-hook-2.jpg", spend: 2212.18, impr: 17625, reach: 11302, clicks: 158, lpv: 144, leads: 58, regs: 58 },  ],
+    { id: "120252998965790236", name: "Q6_vid_q1_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q1-hook1-video.jpg", spend: 301.84, impr: 1212, reach: 833, clicks: 15, lpv: 11, leads: 1, regs: 1 },
+    { id: "120252998967060236", name: "Q7_vid_q2_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q2-hook1-video.jpg", spend: 528.22, impr: 3165, reach: 1707, clicks: 62, lpv: 47, leads: 2, regs: 0 },
+    { id: "120252998967620236", name: "Q8_vid_q2_hook2", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q2-hook2-video.jpg", spend: 217.09, impr: 663, reach: 556, clicks: 14, lpv: 14, leads: 3, regs: 2 },
+    { id: "120252998968480236", name: "Q9_vid_q3_hook1", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q3-hook-1.jpg", spend: 2234.24, impr: 12230, reach: 7058, clicks: 113, lpv: 91, leads: 14, regs: 6 },
+    { id: "120252998969250236", name: "Q10_vid_q3_hook2", group: "quiz", adset: "Quiz page", status: "ACTIVE", img: "thumbs/vid-q3-hook-2.jpg", spend: 139.51, impr: 641, reach: 523, clicks: 12, lpv: 11, leads: 2, regs: 1 },
+    { id: "120252998957880236", name: "W6_vid_w1_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w1-hook-1.jpg", spend: 54.85, impr: 258, reach: 211, clicks: 4, lpv: 4, leads: 0, regs: 0 },
+    { id: "120252998959100236", name: "W7_vid_w1_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w1-hook-2.jpg", spend: 15.84, impr: 85, reach: 76, clicks: 0, lpv: 0, leads: 0, regs: 0 },
+    { id: "120252998960200236", name: "W8_vid_w2_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w2-hook1-video.jpg", spend: 1225.47, impr: 25714, reach: 7988, clicks: 184, lpv: 153, leads: 45, regs: 44 },
+    { id: "120252998961480236", name: "W9_vid_w2_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w2-hook2-video.jpg", spend: 114.22, impr: 666, reach: 535, clicks: 8, lpv: 8, leads: 3, regs: 3 },
+    { id: "120252998962980236", name: "W10_vid_w3_hook1", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w3-hook-1.jpg", spend: 962.68, impr: 7957, reach: 5789, clicks: 96, lpv: 91, leads: 34, regs: 34 },
+    { id: "120252998964470236", name: "W11_vid_w3_hook2", group: "webinar", adset: "Webinar page", status: "ACTIVE", img: "thumbs/vid-w3-hook-2.jpg", spend: 2828.97, impr: 24148, reach: 14833, clicks: 209, lpv: 189, leads: 69, regs: 69 },  ],
 
   // Ad spend per day (IST), all ads summed: [date, spend, impressions, linkClicks, leads, registrations]
   daily: [
     ["2026-09-22", 1103.09, 16317, 264, 5, 5],
     ["2026-09-23", 2263.84, 180517, 1671, 37, 16],
-    ["2026-09-24", 2786.02, 45284, 358, 58, 52],
-    ["2026-09-25", 2650.73, 108069, 582, 40, 34],
-    ["2026-09-26", 3788.32, 38344, 288, 46, 39],
-    ["2026-09-27", 438.69, 2983, 27, 12, 11],
+    ["2026-09-24", 2786.02, 45285, 358, 58, 52],
+    ["2026-09-25", 2650.73, 108070, 582, 40, 34],
+    ["2026-09-26", 3799.24, 38404, 289, 46, 39],
+    ["2026-09-27", 2997.12, 21591, 195, 55, 51],
+    ["2026-09-28", 587.89, 5910, 50, 10, 7],
   ],
 
   // Website events from the Meta pixel, BROWSER ONLY. Purchase and
@@ -72,15 +73,18 @@ const DATA = {
     "2026-09-24": { PageView: 380, QuizCtaClick: 28, QuizStart: 30, QuizAnswer: 187, QuizComplete: 10, QuizLead: 8, WebinarQuestionsStart: 68, WebinarQuestionAnswer: 498, WebinarQuestionsComplete: 60, RegisterClick: 68, WebinarInviteShown: 8, WebinarDetailsClick: 2, CommunityJoin: 7, CompleteRegistration: 55, Lead: 71 },
     "2026-09-25": { PageView: 542, QuizCtaClick: 53, QuizStart: 56, QuizAnswer: 214, QuizComplete: 10, QuizLead: 10, WebinarQuestionsStart: 36, WebinarQuestionAnswer: 270, WebinarQuestionsComplete: 32, RegisterClick: 36, RegistrationSyncFailed: 2, WebinarInviteShown: 10, WebinarDetailsClick: 1, CommunityJoin: 7, RoadmapOpen: 1, CompleteRegistration: 36, Lead: 42 },
     "2026-09-26": { PageView: 325, QuizCtaClick: 44, QuizStart: 47, QuizAnswer: 399, QuizComplete: 19, QuizLead: 16, WebinarQuestionsStart: 45, WebinarQuestionAnswer: 319, WebinarQuestionsComplete: 36, RegisterClick: 45, WebinarInviteShown: 15, WebinarDetailsClick: 3, CommunityJoin: 10, RoadmapOpen: 3, CompleteRegistration: 40, Lead: 48 },
-    "2026-09-27": { PageView: 33, QuizCtaClick: 4, QuizStart: 6, QuizAnswer: 51, QuizComplete: 3, QuizLead: 2, WebinarQuestionsStart: 10, WebinarQuestionAnswer: 82, WebinarQuestionsComplete: 10, RegisterClick: 10, WebinarInviteShown: 2, CommunityJoin: 2, RoadmapOpen: 1, CompleteRegistration: 10, Lead: 11 },
+    "2026-09-27": { PageView: 254, QuizCtaClick: 34, QuizStart: 36, QuizAnswer: 319, QuizComplete: 15, QuizLead: 8, WebinarQuestionsStart: 66, WebinarQuestionAnswer: 482, WebinarQuestionsComplete: 53, RegisterClick: 66, RegistrationAbandon: 3, WebinarInviteShown: 7, CommunityJoin: 7, RoadmapOpen: 3, CompleteRegistration: 52, Lead: 61 },
+    "2026-09-28": { PageView: 54, QuizCtaClick: 2, QuizStart: 3, QuizAnswer: 51, QuizComplete: 3, QuizLead: 3, WebinarQuestionsStart: 9, WebinarQuestionAnswer: 53, WebinarQuestionsComplete: 5, RegisterClick: 9, WebinarInviteShown: 3, WebinarDetailsClick: 1, CommunityJoin: 1, CompleteRegistration: 5, Lead: 13 },
   },
 
   // Free-text notes shown at the top. level: "critical" | "serious" | "warning" | "good"
   notes: [
-    { level: "good", title: "The videos are carrying the campaign, and the images are now off",
-      text: "The six webinar videos have produced 108 of the 133 webinar registrations for ₹3,715 — about ₹34 each — while the five image ads spent ₹2,984 for 25 (₹119). W11 (w3 hook 2) alone: 58 registrations at ₹38, and W8 is the cheapest with volume at ₹28. All ten image ads were switched off on the 26th, so the campaign is now running on video only." },
-    { level: "good", title: "The quiz videos have started working",
-      text: "The quiz page has produced 65 leads for ₹6,333 (₹97 each), plus 24 webinar registrations from people who took the quiz first. Q5 Framework is still most of it at 47 leads, but the five quiz videos — which had produced nothing at all two days ago — are now at 11 leads and 5 registrations on ₹1,751. Q9 (q3 hook 1) accounts for 9 of those leads." },
+    { level: "good", title: "204 registrations with five days to go",
+      text: "The campaign has taken ₹16,188 and produced 204 registrations, ₹79 each over the settled days. 27 September was the best day yet: 51 registrations on ₹2,997, ₹58.77 apiece. The webinar is on 3 October." },
+    { level: "good", title: "The videos are carrying it, and the images are off",
+      text: "The six webinar videos have produced 150 of the 175 webinar registrations for ₹5,202 — about ₹35 each — while the five image ads, switched off on the 26th, ended at ₹2,984 for 25 (₹119). W8 is the cheapest at ₹27.85, W10 close behind at ₹28.31, and W11 has 69 registrations at ₹41." },
+    { level: "warning", title: "The quiz side is getting dearer, not cheaper",
+      text: "The quiz page is now at ₹8,002 for 76 Meta leads (₹105 each) and 29 registrations. The quiz videos have taken over from Q5 Framework but cost more: ₹3,421 for 22 leads (₹156) against Q5's ₹3,700 for 47 (₹79). Q9 alone is ₹2,234 for 14 leads. Worth deciding whether the quiz route earns its ₹1,500 a day with five days left." },
     { level: "warning", title: "Count sign-ups by Registrations, not by ‘Lead’",
       text: "The webinar page fires Lead and CompleteRegistration on the same submit, so one sign-up appears under both names. Other pages on events.bestitcourses.com share this pixel and fire their own Lead events too. Registrations (webinar) and QuizLead (quiz) are the unambiguous ones." },
   ],
